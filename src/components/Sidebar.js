@@ -1,6 +1,6 @@
 // Sidebar compoent
 import React from 'react'
-import { Card, CardTitle, CardBody, FormGroup, Form, CardText } from 'reactstrap'
+import { Card, CardTitle, CardBody, CardText } from 'reactstrap'
 import { graphql, StaticQuery, Link } from 'gatsby'
 import Img from 'gatsby-image'
 
@@ -13,7 +13,7 @@ const Sidebar = ({author, authorFluid}) => (
 		 		<CardBody>
 	 				<CardTitle className="text-center text-uppercase mb-3">{author.name}</CardTitle>
 	 				<CardText>{author.bio}</CardText>
-	 				<div className="author-sosial-links text-center">
+	 				<div className="author-social-links text-center">
 	 					<ul>
 	 						<li><a href={author.facebook} target="_blank" rel="noopener noreferrer" className="facebook"><i className="fab fa-facebook-f fa-lg"></i></a></li>
 	 						<li><a href={author.twitter} target="_blank" rel="noopener noreferrer" className="twitter"><i className="fab fa-twitter fa-lg"></i></a></li>
@@ -27,23 +27,6 @@ const Sidebar = ({author, authorFluid}) => (
 		)}
 		<Card>
 			<CardBody>
-				<CardTitle className="text-center text-uppercase mb-3">
-					Newsletter
-				</CardTitle>				
-				<Form className="text-center">
-					<FormGroup>
-						<input 
-							type="email" 
-							name="email"
-							placeholder="Your email address.."
-						/>
-					</FormGroup>
-					<button className="btn btn-outline-success text-uppercase">Subscribe</button>
-				</Form>
-			</CardBody>
-		</Card>
-		<Card>
-			<CardBody>
 				<CardTitle className="text-center text-uppercase">
 					Advertisement
 				</CardTitle>
@@ -54,10 +37,10 @@ const Sidebar = ({author, authorFluid}) => (
 				/>
 			</CardBody>
 		</Card>
-		<Card>
+		<Card style={{backgroundColor: '#00B5D4'}}>
 			<CardBody>
 				<CardTitle className="text-center text-uppercase mb-3">
-					Recent Posts
+					Postingan Lainnya
 				</CardTitle>
 				<StaticQuery query={sidebarQuery} render={(data) => (
 					<div>
@@ -90,7 +73,7 @@ const sidebarQuery = graphql`
 	query sidebarQuery {
 		allMarkdownRemark (
 			sort: { fields: [frontmatter___date], order: DESC }
-			limit: 3
+			limit: 4
 		) {
 			edges {
 				node {

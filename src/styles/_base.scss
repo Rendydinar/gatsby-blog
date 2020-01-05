@@ -6,9 +6,9 @@ body {
   font-family: $site-font;
 }
 a {
-  color: #E83E8C;
+  color: #00B5D4;
   &:hover {
-    color: #E83E8C;
+    color: #007bff;
     text-decoration: none;
   }
 }
@@ -17,7 +17,7 @@ h1 {
   text-align: center;
 }
 .navbar {
-  background-color: white;
+  background-color: #00B5D4;
   // border-right: 1px solid rgba(0, 0, 0, 0.4);
   // border-left: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.4);
@@ -25,9 +25,9 @@ h1 {
 }
 .navbar-light .navbar-nav .nav-link,
 .navbar-light .navbar-brand {
-  color: #E83E8C;
+  color: #FFF;
   &:hover {
-    color: #E83E8C;
+    color: #007bff;
   }
 }
 ul {

@@ -18,27 +18,28 @@ const Header = ({ siteTitle }) => {
   const toggle = () => setIsOpen(!isOpen); // handle toogle event
 
   return (
-    <div>
       <Navbar fixed="top" light expand="sm">
         <div className="container">
-          <NavbarBrand href="/">{siteTitle}</NavbarBrand>
+          <NavbarBrand href="/"><b>{siteTitle}</b></NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="ml-auto" navbar>
               <NavItem>
-                <NavLink href="/team">Team</NavLink>
+                <NavLink href="/">Home</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/team">Tim</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/tags">Tags</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/about">About</NavLink>
+                <NavLink href="/about">Tentang</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
         </div>
       </Navbar>
-    </div>
   );
 }
 

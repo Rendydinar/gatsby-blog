@@ -3,30 +3,40 @@ import Layout from '../components/layout'
 import Post from '../components/Post'
 import { graphql } from 'gatsby'
 import authors from '../util/authors'
+import { Row, Col } from 'reactstrap'
+import Sidebar from '../components/Sidebar'
+
 
 const authorPosts = ({ data, pageContext }) => {
   const { totalCount } = data.allMarkdownRemark
   const author = authors.find(x => x.name === pageContext.authorName)
-  const pageHeader = `${totalCount} Posts by: ${pageContext.authorName}`
 
   return (
-    <Layout
-      pageTitle={pageHeader}
-      postAuthor={author}
-      authorImageFluid={data.file.childImageSharp.fluid}
-    >
-      {data.allMarkdownRemark.edges.map(({ node }) => (
-        <Post
-          key={node.id}
-          slug={node.fields.slug}
-          title={node.frontmatter.title}
-          author={node.frontmatter.author}
-          date={node.frontmatter.date}
-          body={node.excerpt}
-          tags={node.frontmatter.tags}
-          fluid={node.frontmatter.image.childImageSharp.fluid}
-        />
-      ))}
+    <Layout >
+      <h1 className="text-center" style={{paddingTop: '5rem'}}>{totalCount} Postingan Oleh {author.name}</h1>
+      <Row>
+        <Col md="8">
+          <Row>
+            {data.allMarkdownRemark.edges.map(({ node }) => (
+              <Col md="4">
+                <Post
+                  key={node.id}
+                  slug={node.fields.slug}
+                  title={node.frontmatter.title}
+                  author={node.frontmatter.author}
+                  date={node.frontmatter.date}
+                  body={node.excerpt}
+                  tags={node.frontmatter.tags}
+                  fluid={node.frontmatter.image.childImageSharp.fluid}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Col>
+        <Col md="4">
+          <Sidebar author={author} authorFluid={data.file.childImageSharp.fluid} />
+        </Col>
+      </Row>
     </Layout>
   )
 }

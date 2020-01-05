@@ -18,7 +18,7 @@ const Post = ({title, author, slug, date, body, fluid, tags }) => {
       </Link>
       <CardBody>
         <CardTitle>
-          <Link to={slug}>{title}</Link>
+          <h3><Link to={slug}><b>{title}</b></Link></h3>
         </CardTitle>
         <CardSubtitle>
           <span className="text-info">{date}</span> by{' '}
@@ -29,13 +29,13 @@ const Post = ({title, author, slug, date, body, fluid, tags }) => {
           {tags.map(tag => (
             <li key={tag}>
               <Link to={`/tag/${slugify(tag)}`}>
-                <Badge color="primary" className="text-uppercase">{tag}</Badge>
+                <Badge style={{backgroundColor: '#00B5D4'}} className="text-uppercase">{tag}</Badge>
               </Link>
             </li>
           ))}
         </ul> 
-
-        <Link to={slug} className="btn btn-outline-primary float-right">Read more</Link>
+        <br/>
+        <Link to={slug} className="btn float-right" style={{backgroundColor: '#00B5D4'}}><span style={{color: '#FFF'}}>Baca selengkapnya</span></Link>
       </CardBody>
     </Card>
   )

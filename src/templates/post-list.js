@@ -3,6 +3,9 @@ import Layout from '../components/layout'
 import Post from '../components/Post'
 import { graphql } from 'gatsby'
 import PaginationLinks from '../components/PaginationLinks'
+import { Row, Col } from 'reactstrap'
+import Welcome from '../components/Welcome'
+
 
 const postList = (props) => {
 	const posts = props.data.allMarkdownRemark.edges
@@ -10,17 +13,27 @@ const postList = (props) => {
 
 	return (
 		<Layout pageTitle={`Page: ${currentPage}`} >
-			{ posts.map(({node}) => (
-				<Post key={node.id}
-					slug={node.fields.slug}
-					title={node.frontmatter.title}
-					author={node.frontmatter.author}
-					date={node.frontmatter.date}
-					body={node.excerpt}
-					tags={node.frontmatter.tags}
-					fluid={node.frontmatter.image.childImageSharp.fluid}
-				/>
-			))}
+		    <div className="row">
+		    	<div className="col-md-12">
+				    <Welcome />
+		    	</div>
+		    </div>
+
+			<Row>
+				{ posts.map(({node}) => (
+				<Col md="4">
+					<Post key={node.id}
+						slug={node.fields.slug}
+						title={node.frontmatter.title}
+						author={node.frontmatter.author}
+						date={node.frontmatter.date}
+						body={node.excerpt}
+						tags={node.frontmatter.tags}
+						fluid={node.frontmatter.image.childImageSharp.fluid}
+					/>
+				</Col>
+				))}
+			</Row>
 			<PaginationLinks currentPage={currentPage} numberOfPages={numberOfPages} />
 		</Layout>
 	)
