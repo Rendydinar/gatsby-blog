@@ -7,7 +7,7 @@ const Footer = () => (
 			Unkriswina Informers
 		</h4>
 		<p className="text-center"> Ikuti kami melalui sosial media</p>
-		<div className="footer-social-links">
+		<div className="footer-social-links text-center">
 			<ul className="social-links-list">
 				<li><a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" className="facebook">
 					<i className="fab fa-facebook-f fa-2x" />		
