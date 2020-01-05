@@ -44,14 +44,14 @@ Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope
 Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.
 <div id="code2"></div>
 
-<img src="../../assets/images/javascript.jpg" class="img-fluid" />
+<img src="../page-data/assets/images/javascript.jpg" class="img-fluid" />
 
 Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.
 Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.
 Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.
 Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.
 
-<script type="text/javascript" src="../../assets/js/first-post.js"></script>
+<script type="text/javascript" src="../page-data/assets/js/first-post.js"></script>
 
 
 Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.Welcome to Code Blog, I hope you enjoy our content, Welcome to Code Blog, I hope you enjoy our content.
